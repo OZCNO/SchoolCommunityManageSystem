@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+	<script src="./img/js/admin/scuManagement_2.js"></script>
+	
+</head>
+<body style="overflow-x: hidden">
+					<!--==模块====审核信息=活动注册审核========================-->
+			<div class="right" id="activityDiv">
+				<div class="nowPosition"><span>你现在的位置：社团相关>年度注册审核</span></div>
+				<div class="rightTable">
+					<table class="activityTable">
+						<tr class="bgk">
+							<td style="width: 30%;">社团名称</td>
+							<td style="width: 10%">负责人</td>
+							<td style="width: 20%">申请时间</td>
+							<td style="width: 10%">审核状态</td>
+							<td style="width: 30%">操作</td>
+							
+						</tr>
+						
+						{<foreach $arr|default:null as $i=>$value >}
+							{<if $i%2==1>}
+								{<assign "class" "oneLine">}
+							{<else>}
+								{<assign "class" "twoLine">}
+							{</if>}
+							<tr class={<$class>}>
+								<td style="width: 30%;">{<$value->sName>}</td>
+								<td style="width: 10%">{<$value->nhName>}</td>
+								<td style="width: 20%">{<$value->date_of_entry>}</td>
+								<td style="width: 10%">{<$value->review>}</td>
+								<td style="width: 30%">
+								
+								<span class="operation" id="yearOperationChange" onclick="check({<$value->sNO>})">审核
+								
+								</td>															
+							</tr>
+						{</foreach>}
+					</table>
+					{<if $arr|default:null==null>}<span style="position:relative;display:inline-block;left:40%">没有查询结果</span>{</if>}
+					
+					<div class="cutPages">
+						<a href="admin.php?controller=sManage&method=yearRegGetpage&page=1" class="firstAndLast"><span>首页</span></a>
+						{<if $p-1<1 >}
+						{<assign "pp" 1>}
+						{<else>}
+							{<assign "pp" $p-1>}
+						{</if>}
+						<a href="admin.php?controller=sManage&method=yearRegGetpage&page={<$pp>}" class="fbgk"><span><<</span></a>
+						{<for $i=1 to $page|default:1>}
+							<a href="admin.php?controller=sManage&method=yearRegGetpage&page={<$i>}" class="ebgk"><span>{<$i>}</span></a>
+						{</for>}
+						{<if $p+1>$page>}
+							{<assign "pp" $page>}
+						{<else>}
+							{<assign "pp" $p+1>}
+						{</if>}
+						<a href="admin.php?controller=sManage&method=yearRegGetpage&page={<$pp>}" class="fbgk"><span>>></span></a>
+						<a href="admin.php?controller=sManage&method=yearRegGetpage&page={<$page>}" class="firstAndLast"><span>尾页</span></a>
+					</div>
+				</div>
+				<!--<div class="change_table_check">
+        <input type="submit" class="change_check_sbt" id="check_return2" name="" value="返回">-->
+				</div>
+				</div>
+			</div>
+		</div>
+    {<include file="admin/scuManagement_2_1.html">}
+
+</body>
+</html>

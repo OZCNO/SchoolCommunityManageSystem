@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>注册界面</title>
+	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/reg1.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/main/main.js"></script>
+	<script src="./img/js/main/reg1.js"></script>
+</head>
+<body>
+    {<include file="main/header.html">} 
+	<article>
+		<img src="./img/images/1.png" alt="1" class="img-position">
+		<div id="form-content">
+			<form action="{<$reg2>}" method="post" name="form" onsubmit="return confirm()">
+				<ul>
+					<li>
+						<label>&nbsp&nbsp用户名&nbsp<input class="inputDiv" type="text" name="username" placeholder="请输入学号"  /></label><br /><span class="state1"></span><br />
+					</li>
+					<li>
+						<label>&nbsp&nbsp密&nbsp&nbsp码&nbsp<input class="inputDiv" type="password" name="pwd" placeholder="请输入密码"   /></label><br /><span class="state1"></span><br />
+					</li>
+					<li>
+						<label>确认密码&nbsp<input class="inputDiv" type="password" name="pwd2" placeholder="请输入以上密码"   /></label><br /><span class="state1"></span><br />
+					</li>
+					<li>
+						<label>&nbsp&nbsp邮&nbsp&nbsp箱&nbsp<input class="inputDiv" type="text" name="email" placeholder="请输入您的邮箱" /></label><br /><span class="state1"></span><br />
+					</li>
+				</ul>
+				<input type="submit" class = "submitBtn" value="下一步">
+			</form>
+		</div>
+	</article>
+	{<include file="main/login.html">}
+</body>
+</html>

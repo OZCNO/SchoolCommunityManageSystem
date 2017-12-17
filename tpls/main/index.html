@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>校社联欢迎你</title>
+<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+<link rel="stylesheet" type="text/css" href="./img/css/main/index.css">
+<script src="./img/js/jquery.js"></script>
+<script src="./img/js/main/index.js"></script>
+<script src="./img/js/main/main.js"></script>
+</head>
+
+<body onLoad="load()">
+    {<include file="main/header.html">}    
+    <section>
+      <div class="scrollImg" id="scrollImg">
+      {<foreach $arr|default:null as $k=>$v>}
+        {<if $k==0>}
+        <div class="imgs" id="imgs" style="display:block">
+        {<else>}
+        <div class="imgs" id="imgs" style="display:none">
+        {</if>}
+
+          <a href="index.html?{<'controller=index&method=activityMore&aNO='|cat:$v->aNO|encrypt_url:'SCU'>}"  class="tooltip"> 
+            <img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="{<$v->aImg>}">
+          </a>
+          
+        </div>
+      {</foreach>}
+      
+      {<if $arr|default:null==null>}
+        <div class="imgs" id="imgs">        
+        <a href="#"  class="tooltip"> 
+          <img id='pic' src="./img/images/default.jpg">
+        </a>
+        </div>
+      {</if>}
+            <div style="clear:both"></div>
+            <div class="scroll">
+              {<if $arr|default:null!=null>}
+        <span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
+              <span  class="next" id="nextPic" onclick="f_nextPic()">&gt;</span>
+        {</if>}
+                <div class="opacity"></div>
+        {<foreach $arr|default:null as $k=>$v>}
+          {<if $k==0>}
+          <div class="outline"  style="display:black">
+          {<else>}
+          <div class="outline"  style="display:none">
+          {</if>}
+            <span id="outll" class="outll">{<$v->aName>}</span>
+          </div>
+        {</foreach>}
+              <ul class="circle" id="circle">
+          {<foreach $arr|default:null as $k=>$v>}
+            {<if $k==0>}
+              <li class="hover"  onclick="addEvent({<$k>})" style="color:#fff">●</li>
+            {<else>}
+              <li class="hover" onclick="addEvent({<$k>})" style="color:#b3c0cc">●</li>
+            {</if>}
+
+          {</foreach>}
+        </ul>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <!--scrollImg end -->
+    </section>
+    <section>
+        <div class="ann">
+        <div class="title" id="title">
+                <span id="main">热门活动</span
+                ><span id="hot">火热进行</span
+                ><span id="history">历史回顾</span>
+            </div>
+            <div id="mode1" class="mode">
+                {<foreach $arr2|default:null as $k=>$v>}
+                <div class="mode1" id="mar">
+                  <a href="index.html?{<'controller=index&method=activityMore&aNO='|cat:$v->aNO|encrypt_url:'SCU'>}"><img class="top3" id='borad' src="{<$v->aImg>}"></a>
+                  <div class="title">{<$v->aName>}</div>
+                </div>
+                {</foreach>}
+            </div>
+
+            <div id="mode2" class="mode">
+                {<foreach $arr3|default:null as $k=>$v>}
+                <div class="mode2" id="mar">
+                  <a href="index.html?{<'controller=index&method=activityMore&aNO='|cat:$v->aNO|encrypt_url:'SCU'>}"><img class="top3" id='borad' src="{<$v->aImg>}"></a>
+                  <div class="title">{<$v->aName>}</div>
+                </div>
+                {</foreach>}
+            </div>
+            <div id="mode3" class="mode">
+                {<foreach $arr4|default:null as $k=>$v>}
+                <div class="mode3" id="mar">
+                  <a href="index.html?{<'controller=index&method=activityMore&aNO='|cat:$v->aNO|encrypt_url:'SCU'>}"><img class="top3" id='borad' src="{<$v->aImg>}"></a>
+                  <div class="title">{<$v->aName>}</div>
+                </div>
+                {</foreach>}
+            </div>
+        </div>
+    </section><!-- 
+  <p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p> -->
+    <div class="footer"></div>
+    {<include file="main/login.html">}
+</body>
+</html>

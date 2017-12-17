@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+	<script src="./img/js/admin/scuManagement_1.js"></script>
+	<title>
+	</title>
+</head>
+<body style="overflow-x: hidden">
+				
+			<!--模块=============社联相关-成员管理-==================-->
+			<div  class="right" id="memberDiv">
+				<div class="nowPosition"><span>你现在的位置：社联相关>成员管理</span></div>
+				<div class="rightle">
+				<form method="POST" action="admin.php?controller=sManage&method=scuShow">
+					<div class="userSearch">
+						<div class="titleBgk">
+							<div class="userSearchS"><span class="userSearchSpan">用户查询</span></div>
+						</div>
+						<div class="formIptBgk">
+							<div class="select">
+								<span>选择部门：</span>
+								<select name="department">
+									<option value="0">不限</option>
+									<option value="1">办公室</option>
+									<option value="2">人力资源部</option>
+									<option value="3">财务监控部</option>
+									<option value="4">外联部</option>
+									<option value="5">文娱部</option>
+									<option value="6">网络信息部</option>
+									<option value="7">会员服务部</option>
+									<option value="8">宣传策划部</option>
+								</select>
+							</div>
+							<div class="selectNextDiv">
+								<span>姓名</span><input class="ipt" type="text" name="realname"></div>
+								<input type="submit" class="submitSbt" name="" value="查询">
+						</div>
+					</div>
+				</form>
+					<div class="rightTable">
+						<table>
+						<tr class="bgk">
+							<td style="width: 5%;">全选</td>
+							<td style="width: 10%">姓名</td>
+							<td style="width: 10%">学号</td>
+							<td style="width: 10%">部门</td>
+							<td style="width: 10%">职位</td>
+							<td style="width: 12%">手机</td>
+							<td style="width: 10%">宿舍</td>
+						</tr>
+						{<foreach $arr|default:null as $i=>$value >}
+							{<if $i%2==1>}
+								{<assign "class" "oneLine">}
+							{<else>}
+								{<assign "class" "twoLine">}
+							{</if>}
+							<tr class={<$class>}>
+								<td style="width: 5%;"><input type="checkbox" name="smNo" class="one" value="{<$value->ID>}"></td>
+								<td style="width: 10%">{<$value->realname>}</td>
+								<td style="width: 10%">{<$value->username>}</td>
+								<td style="width: 10%">{<$value->department>}</td>
+								<td style="width: 10%">{<$value->job>}</td>
+								<td style="width: 12%">{<$value->phone>}</td>
+								<td style="width: 10%">{<$value->dorm>}</td>
+							</tr>
+						{</foreach>}
+						</table>
+						{<if $arr|default:null!=null>}<input type="checkbox" name="all" id="all" onclick="changeState()"/>全选{<else>}<span style="position:relative;display:inline-block;left:40%">没有查询结果</span>{</if>}
+						
+						<div class="cutPages">
+							<a href="admin.php?controller=sManage&method=getPage&page=1" class="firstAndLast"><span>首页</span></a>
+							{<if $p-1<1 >}
+							{<assign "pp" 1>}
+							{<else>}
+								{<assign "pp" $p-1>}
+							{</if>}
+							<a href="admin.php?controller=sManage&method=getPage&page={<$pp>}" class="fbgk"><span><<</span></a>
+							{<for $i=1 to $page|default:1>}
+								<a href="admin.php?controller=sManage&method=getPage&page={<$i>}" {<if $i==$p>}class="ebgk">{<else>}class="fbgk"{</if>}<span>{<$i>}</span></a>
+							{</for>}
+							{<if $p+1>$page>}
+								{<assign "pp" $page>}
+							{<else>}
+								{<assign "pp" $p+1>}
+							{</if>}
+							<a href="admin.php?controller=sManage&method=getPage&page={<$pp>}" class="fbgk"><span>>></span></a>
+							<a href="admin.php?controller=sManage&method=getPage&page={<$page>}" class="firstAndLast"><span>尾页</span></a>
+						</div>
+						<div class="del">
+							<input type="button" id="delSelect" name="" onclick="dell()" value="删除所选">
+							<input type="button" id="addSelect" name="" value="添加成员">
+							<input type="button" id="changeSelect" name="" onclick="update()" value="更改所选">
+						</div>
+						
+						
+						<!--删除成员-->
+						<div class="alert">
+							<p class="alertP">确定删除所选成员的全部信息</p>
+								<div class="alertSbm">
+									<input type="button" onclick="del()" value="确定">
+									<input type="button" id="cancel" name="" value="取消">
+								</div>
+						</div>
+						
+						<!--添加成员-->
+						<div class="addAlert">
+							<div class="addAlertTop" ><span>添加成员</span><img id="addAlertTopX" class="addAlertTopX" src="./img/images/addAlertTopX.png"></div>
+						<form method="POST" action="admin.php?controller=sManage&method=scuAdd">
+							<div class="addAlertSelect">
+								<span class="addAlertFormSpan">选择职位</span>
+								<select name="department">
+									<option value="0">选择部门</option>
+									<option value="1">办公室</option>
+									<option value="2">人力资源部</option>
+									<option value="3">财务监控部</option>
+									<option value="4">外联部</option>
+									<option value="5">文娱部</option>
+									<option value="6">网络信息部</option>
+									<option value="7">会员服务部</option>
+									<option value="8">宣传策划部</option>
+								</select>
+								<select name="job">
+									<option value="0">选择职位</option>
+									<option value="1">主席团</option>
+									<option value="2">部长</option>
+									<option value="3">副部长</option>
+									<option value="4">干事</option>
+								</select>
+							</div>
+						<div class="addAlertIptAll">
+							<div class="addAlertIpt">
+								<span>姓名</span><input type="text" name="realname">
+								<span>学号</span><input type="text" name="username">
+							</div>
+							<div class="addAlertIpt">
+								<span>系名</span><input type="text" name="dname">
+								<span>专业</span><input type="text" name="major">
+							</div>
+							<div class="addAlertIpt">
+								<span>班级</span><input type="text" name="class">
+								<span>宿舍</span><input type="text" name="dorm">
+							</div>
+							<div class="addAlertIpt" id="a">
+								<span>手机</span><input type="text" name="phone">
+								<span>微信</span><input type="text" name="wechat">
+							</div>
+							
+							
+							<div class="addAlertIptAdmin1">
+								<span>管理员账号</span><input type="text" name="admin_usr"><br>
+								<span class="passWord">密码</span><input type="password" name="admin_pwd">
+							</div>
+							<input type="submit"  class="addAlertSbt" name="" value="提交">
+						</div>
+						</form>
+						</div>
+						{<include file="admin/scuManagement_1_1.html">}
+						
+						
+						
+					</div>
+					
+				</div>
+			</div>
+      {<include file="admin/scuManagement_1_1.html">}
+
+
+</body>
+</html>

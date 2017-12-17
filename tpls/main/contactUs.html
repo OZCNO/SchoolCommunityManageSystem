@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>联系我们</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+    <link rel="stylesheet" type="text/css" href="./img/css/main/contactUs.css">
+    <script src="./img/js/jquery.js"></script>
+    <script src="./img/js/main/contactUs.js"></script>
+    <script src="./img/js/main/main.js"></script>
+</head>
+
+<body>
+    {<include file="main/header.html">}    
+    <article>
+        <div class="content">
+            <div class="content_us">
+                <div class="content_us_pbl"><span>问题反馈</span></div>
+                <div class="content_us_hr"><hr></div>
+                <div class="content_us_deprt">
+                    <p>对你给予的建议和支持，深表感谢！</p>
+                    <input type="text" id="phdIe" name="" placeholder="问题描述" 
+                        onfocus="if(placeholder=='问题描述'){placeholder=''}" 
+                        onblur="if(placeholder==''){placeholder='问题描述'}">
+                </div>
+                <div class="content_us_txt">
+                    <textarea id="txtPhdIe" placeholder="这里描述你所遇到的问题..." 
+                        onfocus="if(placeholder=='这里描述你所遇到的问题...'){placeholder=''}" 
+                        onblur="if(placeholder==''){placeholder='这里描述你所遇到的问题...'}"></textarea>
+                </div>
+                <div class="content_us_ident">
+                    <span>请输入验证码：</span><input type="text" name=""><img src="main.php?controller=index&method=getCheckedImage_contactUs" id="checked"onclick="getCheckedImage_contactUs()">
+                </div>
+                <input type="submit" class="content_us_sbt" name="" value="提交">
+            </div>
+        </div>
+    </article>
+    {<include file="main/login.html">}
+</body>
+</html>

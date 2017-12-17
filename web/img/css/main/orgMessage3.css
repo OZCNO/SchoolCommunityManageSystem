@@ -1,0 +1,162 @@
+.canfloat{
+	position:fixed;
+}
+/*triangle */
+.pre_nav::after{
+	transform:rotate(45deg);
+	content:'';
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:58%;
+	right:-12.5px;
+	box-shadow:5px -5px 10px -2px #999 inset;
+	background-color:#fff;
+	border:0px;	
+}
+.comment_textarea{
+	display:block;
+	margin-top:30px;
+	font-size:16px;
+	padding:10px;
+	height:60px;
+}
+.submit{
+	width:70px;
+	height:25px;
+	border:0;
+	background-color:#67bae1;
+	color:#000;
+	margin-top:10px;
+	font-size:10px;
+	cursor:pointer;
+}
+.com{
+	border-top:1px #ccc solid;
+	margin-top:50px;
+	margin-left: 0px;
+}
+.comment{
+	border-bottom:1px #ccc solid;
+}
+.comment img{
+	width:60px;
+	height:49px;
+	display: inline-block;
+	padding-top:6px;
+	vertical-align: top;
+}	
+.comment .comment_right{
+	padding-top:6px;
+	display:inline-block;
+}
+.comment .my_name{
+	color:#69F;
+	font-size:16px;
+}
+.comment .time{
+	color:#ccc;
+	font-size:16px;
+	display:inline-block;
+	margin-bottom:16px;
+}
+.comment .con{
+	font-size:16px;
+	color:#000;
+}
+.comment_a{
+	cursor: pointer;
+	font-size:18px;
+	margin-top:20px; 
+	margin-bottom:10px;
+	color:#000;
+	position:absolute;
+	z-index:3;
+}
+.bottom{
+	padding-top:20px;
+	background-color: #ccc;
+	display:none;
+	margin-left: 0px;
+	height:25px;
+	text-align:center;
+}
+.bottom hr:first-child{
+	float:left;
+}
+.bottom hr:last-child{
+	float:right;
+}
+.bottom span{
+	width:112px;
+	line-height:0.1;
+	display: block;
+}
+.default{
+	display:none;
+}
+@media (min-width: 1190px){
+	.comment_textarea{
+		margin-left:0px;
+		width:700px;
+	}
+	.submit{
+		float:left;
+		margin-left:630px;
+	}
+	.comment{
+		margin-left:0px;
+		width:722px;
+	}
+	.com,.bottom{
+		width:722px;
+	}
+	.bottom hr{
+		width:300px;
+	}
+	.main .comment .comment_right{
+		width:650px;
+	}
+	.comment .con{
+		width:700px;
+	}
+	.comment_a{
+		margin-left:620px;
+	}
+}
+@media (max-width:1189px){
+	.comment_textarea{
+		width:97%;
+		margin-right:3%;
+		box-sizing: border-box;
+	}
+	.submit{
+		float: right;
+		margin-right:3%;
+	}
+	.com{
+		width:97%;
+		margin-right: 3%
+	}
+	.comment{
+		width: 100%;
+	}
+	.bottom{
+		width: 97%;
+	}
+	.bottom hr{
+		width:36%;
+	}
+	.comment .comment_right{
+		width:80%;
+		box-sizing: border-box;		
+	}
+	.comment .con{
+		width:100%;
+	}
+	.comment_a{
+		display: block;
+		float:right;
+		margin-right:3%;
+	}
+}

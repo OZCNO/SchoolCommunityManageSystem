@@ -1,0 +1,27 @@
+    <header>
+        <div class="top">
+            <img id="logo01" src="./img/images/logo/logo01.png"/><img id="logo02" src="./img/images/logo/logo02.png"/>
+            <div id="span">
+                <span id="name">广东金融学院学生社团联合会</span><br/>
+                <span id="website">www.xxx.com</span>
+            </div>
+            <nav>
+                <div class="nav">
+                    <ul id="nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="{<$url_aboutUs>}">关于社联</a></li>
+                        <li><a href="{<$url_information>}">社团信息</a></li>
+                        <li><a href="{<$url_contactUs>}">联系我们</a></li>
+                    </ul>
+                </div>
+            </nav>            
+            <div class="loRe">
+                <div class="list">
+                    {<$login|default:"<span class='lr' onclick='login()'>登录</span>">}<span>|
+                    </span>{<$reg|default:"<a href='{<$url_reg>}'><span class='lr'>注册</span></a>">}
+                    <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
+                </div>
+            </div>
+            <img id="menu" src="./img/images/menu.png"/>
+        </div>
+    </header>

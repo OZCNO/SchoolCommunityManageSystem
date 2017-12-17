@@ -1,0 +1,142 @@
+/* CSS Document */
+*{margin:0 auto;padding:0;}
+a{text-decoration:none;font-family:SimHei;cursor:pointer;}
+p,span,input,div{font-family:SimHei;}
+body{
+	min-width: 636px;
+}
+.canfloat{
+	position:fixed;
+}
+.wrapped{
+	position:relative;
+	width:100%;
+}
+.content{
+	width:100%;
+		/*height:800px;*/
+	position:absolute;
+}
+.content .name{
+	width:100%;
+	height:179px;
+	position:absolute;
+	z-index:0;
+	background-color:#d0e0e8;
+	box-sizing: border-box;
+}
+.content .main{
+	width:100%;
+		/*height:500px;*/
+	position:absolute;
+	z-index:2;
+	top:180px;
+	box-sizing: border-box;
+}
+.name_left{
+	margin-top:40px;
+	float:left;
+}
+.name_left .org{
+	font-size:34px;
+}
+.name_left a{
+	font-size:16px;
+	line-height:2.2;
+}
+.name_left a img{
+	width:20px;
+	height:20px;
+	display:block;
+	margin-top:8px;
+	float:left;
+}
+.name input{
+	margin-top:50px;
+	width:160px;
+	height:50px;
+	display: inline-block;
+	background:#6699cc;
+	font-size:22px;
+	color:#fff;
+	border:0;
+	border-radius:5px;
+	cursor:pointer;
+}
+@media (min-width: 1190px){
+	.main,.name{
+		padding-left: 442px;
+	}
+	.name input{
+		margin-left:338px;
+	}
+	.pre_nav{
+		left:15%;
+	}
+}
+@media (max-width: 1189px)and (min-width: 769px){
+	.main,.name{
+		padding-left:35%;
+	}
+	.name input{
+		margin-right:5%;
+		float: right;
+	}
+	.pre_nav{
+		left:10%;
+	}
+}
+@media (max-width: 768px){
+	.main,.name{
+		padding-left:30%;
+	}
+	.name input{
+		margin-right:5%;
+		float: right;
+	}
+	.pre_nav{
+		left:0%;
+	}
+}
+.pre_nav{
+	width:177px;
+	height:550px;
+	position:absolute;
+	z-index:5;
+	top:0;
+	background:#fff;
+	box-shadow:0px 0px 10px 2px #999;
+}
+.pre_nav img{
+	width:150px;
+	height:150px;
+	margin-top:10px;
+	margin-left:15px;
+	margin-bottom:13px;
+}
+.pre_nav ul{
+	list-style:none;
+	line-height:3;
+	font-size:24px;
+	display:block;
+	float:left;
+	margin-left:13px;
+}
+.pre_nav ul li{
+	display:block;
+	width:150px;
+	height:62px;
+	border-bottom:solid 1px #999;
+}
+.pre_nav ul li span{
+	margin-left:27px;
+	display:block;
+	float:left;
+	font-size: 20px;
+}
+
+.pre_nav ul li .nav{
+	cursor:pointer;
+	color:#000;
+}
+

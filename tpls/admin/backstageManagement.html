@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>校社联后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/backstageManagement.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/rightReg.css">
+	<script src="./img/js/admin/laydate/laydate.js"></script>
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/backstageManagement.js"></script>
+	<script src="./img/js/admin/{<$jsurl|default:'backstageManagement_1.js'>}"></script>
+	<style>
+		
+		body{
+			overflow-y: hidden;
+			overflow-y: hidden;
+		}
+		html{
+			overflow-y: hidden;
+		}
+		.bg{
+			background: #eeeced;
+			width: 100%;
+			height: 44rem;
+		}
+	</style>
+		
+</head>
+<body>
+		<header><img src="./img/images/backstage.png"></header>
+		<article>
+			<div class="left">
+			<div class="leftUser">
+				
+				<span class="leftUserSpan">当前社团：{<$sName|default:"">}</span>
+				<form action="admin.php?controller=admin&method=logout" method="post"><input type="submit" name="exit" class="leftUserIpt" value="退出"></form>
+				
+				
+				<div class="leftNav">
+					<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>管理社团</span></div><hr>
+					<div><span class="leftNavNOImg" id="activReg">活动申请</span></div><hr>
+					<div><span class="leftNavNOImg" id="reg">年度注册</span></div><hr>
+					<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>管理成员</span></div><hr>
+					<div><span class="leftNavNOImg" id="check">成员审核</span></div><hr>
+					<div><span class="leftNavNOImg" id="rnow">现有成员</span></div><hr>
+				</div>
+				<div class="leftUpon"></div>
+			</div>
+			</div>
+        <div class="bg">
+          <iframe id="ifr" scrolling="yes" width="80%" height="700px" frameborder="0" src="./admin.php?controller=socmem&method={<$url>}" scrolling="yes" width="80%" height="700px" frameborder="0"></iframe>
+        </div>
+		</article>
+
+</body>
+</html>

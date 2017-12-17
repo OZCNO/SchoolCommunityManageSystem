@@ -1,0 +1,30 @@
+<div class="back_mark"></div>
+
+    <div class="layout">
+        <span class="close">x</span>
+        <div class="login_div">
+                <span class="login">账号登录</span>
+                <span class="tips"></span>
+
+                <div class="userDiv">
+                   <input  placeholder="请输入你的学号" class="user" name="username" id="username"/><br />
+                </div>
+
+                <div class="psdDiv">
+                <input type="password" placeholder="请输入你的密码" class="psd" name="password" id="password"/><br />
+                </div>
+
+                <div class="check_id">
+                    <input type="text" placeholder="验证码" class="check_text" id="check_text" name="check_text">
+                    <img id="checkedImage" src="main.php?controller=login&method=getCheckedImage" onclick="getCheckedImage()"/> 
+                </div>
+
+                <div class="rem_psd">
+                    <input type="checkbox"  id="auto_login" name="auto_login"/>自动登录
+                    <a>忘记密码?</a>
+                </div>
+
+                <input type="submit" value="登录" class="login_btn" onclick="check_str()"/><br />
+        </div>
+    </div>
+    

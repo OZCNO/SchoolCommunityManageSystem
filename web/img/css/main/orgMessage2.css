@@ -1,0 +1,68 @@
+/*triangle */
+.pre_nav::after{
+	transform:rotate(45deg);
+	content:'';
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:47%;
+	right:-12.5px;
+	box-shadow:5px -5px 10px -2px #999 inset;
+	background-color:#fff;
+	border:0px;
+}
+.canfloat{
+	position:fixed;
+}
+.activity{
+	padding-top:20px;
+	float:left;
+}
+.activity span{
+	font-size:19px;
+	border-left:2px solid #39c;
+	color:#39c;
+	padding-left:10px;
+	display:block;
+	line-height:1.5;
+	height:30px;
+}
+.activity p{
+	margin-top:10px;
+	margin-left:20px;
+	line-height:1.5;
+	padding-bottom:30px;
+	font-size:14px;	
+}
+.activity .activity_img{
+	width:180px;
+	height:130px;
+	float:right;
+	margin-left:10px;
+	margin-bottom: 10px;
+}
+.activity .activity_img img{
+	width:180px;
+	height:130px;
+}
+.activity hr{
+	border:0.01rem solid #d0e0e8;
+	display:inline-block;
+	box-sizing: border-box;
+}
+@media (min-width: 1190px){
+	.activity .activity_img{
+		margin-right:21%;
+	}
+	.activity hr{
+		width:80%;
+	}
+}
+@media (max-width: 1189px) {
+	.activity .activity_img,.activity hr{
+		margin-right:5%;
+	}
+	.activity hr{
+		width:98%;
+	}
+}

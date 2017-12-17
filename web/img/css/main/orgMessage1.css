@@ -1,0 +1,40 @@
+/*triangle */
+.pre_nav::after{
+	transform:rotate(45deg);
+	content:'';
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:35%;
+	right:-12.5px;
+	box-shadow:5px -5px 10px -2px #999 inset;
+	background-color:#fff;
+	border:0px;	
+}
+.main_left{
+	padding-top:20px;
+	font-size:14px;
+	line-height:1.5;
+}
+.main_right{
+	width:260px;
+	height:150px;
+	margin-left:10px;
+	margin-top:20px;
+	margin-bottom: 10px;
+	display: block;
+	float: right;
+}
+.canfloat{
+	position:fixed;
+}
+@media (min-width: 1190px){
+	.main_right{
+		margin-right:21%;
+	}
+}
+@media (max-width: 1189px) {
+	.main_right{
+		margin-right:5%;
+	}
+}

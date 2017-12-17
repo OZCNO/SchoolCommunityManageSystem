@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/account.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+  <script src="./img/js/admin/{<$jsurl|default:'scuManagement_8.js'>}"></script>
+	<title>
+	</title>
+</head>
+<body style="overflow-x: hidden">
+				
+			<!--模块=============权限管理-账号管理-==================-->
+			<div  class="right" id="memberDiv">
+				<div class="nowPosition"><span>你现在的位置：社团相关>社团管理员</span></div>
+				<div class="account-table">
+					<table>
+						<tr class="account-title">
+							<td>所属社团</td>
+							<td>用户名</td>
+							<td>操作</td>
+						</tr>
+			  {<foreach $arr|default:null as $i=>$value >}
+				  {<if $i%2==1>}
+					  {<assign "class" "account-fff">}
+				  {<else>}
+					  {<assign "class" "account-fafa">}
+				  {</if>}
+          <tr class={<$class>}>
+						<td>{<$value->sName>}</td>
+            <td>{<$value->sUsername>}</td>
+              <td><span id="account-change" class="account-op" onclick="update({<$value->sNo>})">修改</span><td>
+						</tr>
+            {</foreach>}
+					</table>
+		{<if $arr|default:null==null>}<span style="position:relative;display:inline-block;left:40%">当前社团管理员账号</span>{</if>}
+          
+					<div class="cutPages">
+						<a href="admin.php?controller=sManage&method=socAccountPage&page=1" class="firstAndLast"><span>首页</span></a>
+						{<if $p-1<1 >}
+						{<assign "pp" 1>}
+						{<else>}
+							{<assign "pp" $p-1>}
+						{</if>}
+						<a href="admin.php?controller=sManage&method=socAccountPage&page={<$pp>}" class="fbgk"><span><<</span></a>
+						{<for $i=1 to $page|default:1>}
+							<a href="admin.php?controller=sManage&method=socAccountPage&page={<$i>}" class="ebgk"><span>{<$i>}</span></a>
+						{</for>}
+						{<if $p+1>$page>}
+							{<assign "pp" $page>}
+						{<else>}
+							{<assign "pp" $p+1>}
+						{</if>}
+						<a href="admin.php?controller=sManage&method=socAccountPage&page={<$pp>}" class="fbgk"><span>>></span></a>
+						<a href="admin.php?controller=sManage&method=socAccountPage&page={<$page>}" class="firstAndLast"><span>尾页</span></a>
+					</div>
+				</div>	
+		</div>
+
+
+		<!-- 修改社团管理员信息-->
+		<div id="add-bg"></div>
+			<div id="add-content">
+				<div class="add-title">
+					<span id="change"></span>
+					<img id="add-close" src="./img/images/addAlertTopX.png">
+				</div>
+				<div class="add-form">
+					<div class="add-input">
+						<label class="label2">用户名</label>
+						<input class="input" type="text" name="sUsername" id="sUsername"  disabled="true"/>
+						<label class="label1">所属社团</label>
+						<input class="input" type="text" name="sName" id="sName" disabled="true"/>
+					</div>
+					<div class="add-input">
+						<label class="label2">新密码</label>
+						<input class="input" type="password" name="sPassword" id="password"/>
+						<label class="label1">确认密码</label>
+						<input class="input" type="password" name="rpassword" id="rpassword"/>
+					</div>
+					<span class="add-mess" id="add-mess"></span><br />
+					<input type="button" class="add-submit" id="add-submit" name="" value="确定">
+				</div>
+			</div>
+		
+</body>
+</html>

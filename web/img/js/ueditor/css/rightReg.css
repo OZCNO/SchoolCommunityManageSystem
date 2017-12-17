@@ -1,0 +1,225 @@
+.rightReg{
+	width: 80%;
+	height: 55rem;
+	background: #eeeced;
+	float: left;
+}
+.regForm{
+	width: 90%;
+	margin-left: 1.5rem;
+}
+.formIformation{
+	margin-top: 1rem;
+	width: 96%;
+	height: 100%;
+	background: #eeeced;
+}
+.formIformation .text span,.text span{
+	width: 8rem;
+	height: 2rem;
+	margin-left: 0rem;
+	display:inline-block;
+	text-align: right;
+	margin-top: 1rem;
+	color:#666; 
+	font-size: 1rem;
+}
+.rightSpan{
+	padding-left: 2rem;
+
+}
+.sel{
+	margin-left:1.5rem; 
+	height: 1.5rem;
+	width: 20%;
+	font-size: 0.9rem;
+	font-family: simhei;
+	outline: none;
+	color: #6b6b6b;
+}
+.formIformation .text input{
+	height: 1rem;
+	width: 20%;
+	max-width: 25%;
+	outline: none;
+	font-size: 1rem;
+	margin-left:1.5rem; 
+
+}
+.text input{
+	height: 1rem;
+	width: 25%;
+	max-width: 30%;
+	outline: none;
+	font-size: 1rem;
+	margin-left:1.5rem; 
+}
+#date,#actDate{
+	width: 18.1%;
+	height: 1.2rem;
+	font-size: 1rem;
+	font-family: simhei;
+	outline: none;
+}
+#actDate{
+	width: 22.9%;
+}
+.text .rightSpan{
+	margin-left: -3rem;
+}
+.textareas{
+	position: relative;
+	top: -1.8rem;
+	color:#666; 
+	font-size: 1rem;
+	margin-left: 4rem;
+
+}
+.texte .textareas{
+	position: relative;
+	top: -3rem;
+	color:#666; 
+	font-size: 1rem;
+	margin-left: 4rem;
+}
+.formIformation textarea,.texte textarea{
+	margin-top: 1rem;
+	width: 65%;
+	height:4rem;
+	margin-left: 1rem;
+	max-height: 20rem;
+	overflow-y: none;
+	overflow-x: none;
+	outline: none;
+	font-size: 1rem;
+}
+.notice{
+	width: 70%;
+	margin-top: 0.8rem;
+	margin-left: 6rem;
+	color: #a2a5a9;
+	font-size: 0.8rem;
+}
+.submit{
+	width: 9%;
+	height: 2rem;
+	background: #96d0eb;
+	margin:2% 40%;
+	border:0;
+	outline: none;
+}
+.submit1{
+	height: 2.5rem;
+	text-align: center;
+}
+.submit1 input{
+	outline: none;
+	background: #96d0eb;
+	width: 10%;
+	height: 1.8rem;
+	font-size: 1rem;
+	border:0;
+}
+.submit1 input:active,.submit:active{
+	background: #52a9d1;
+}
+.yesOrNo{
+	margin-top: 2rem;
+	color:#666; 
+	font-size: 1rem; 
+	margin-left: 3.5rem;
+}
+.text .radio{
+	width: 2rem;
+	font-size: 1rem;
+
+}
+.operationDel,.operationLook{
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.operationLine{
+	margin-left:3%;
+	font-size: 0.8rem;
+}
+.operationDel{
+	margin-left:-2%;
+}
+.rightTable1{
+	width: 99%;
+	margin: -3.5% 1%;
+}
+table{
+	white-space: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: center;
+	border-collapse: collapse;
+	margin-top:5%;
+	width: 100%;
+
+}
+table .bgk{
+	background: #cfdcfd;
+}
+.oneLine{
+	background: #fafafa;
+}
+.twoLine{
+	background: #fff;
+}	
+td{
+	border: 1px solid #d1d0d0;
+	border-collapse: collapse;
+	margin: 0;
+	height: 2rem;
+}
+table tr td a{
+	text-decoration: none;
+	color: #000;
+}
+.right_sbt{
+	margin: 5% auto;
+	text-align: center;
+}
+#right_sbts{
+	width: 12%;
+	height: 2.5rem;
+	background: #cfdcfd;
+	border: 1px solid #eee;
+	font-size: 1em;
+	font-family: simhei;
+	outline: none;
+}
+#right_sbts:active{
+	background: #95ade9;
+
+}
+.opBgk{
+	width: 120%;
+	height: 60rem;
+	background: rgba(0 ,0, 0, 0.2);
+	position: absolute;
+	top: 0%;
+	left: -20%;
+}
+.formIformation1{
+	width: 40%;
+	height: 50%;
+	background: #fafafa;
+	position: absolute;
+	top: 10%;
+	left: 40%;
+}
+.actCheck_title{
+	height:1.8rem;
+	background: #cfdcfd;
+	margin-bottom:1rem; 
+}
+.actCheck_title span{
+	display: block;
+	padding-top: 0.9%;
+	margin-left:2%;
+}
+

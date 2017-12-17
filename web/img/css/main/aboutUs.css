@@ -1,0 +1,149 @@
+.aNav{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1.5;
+    float: left;
+}
+.aNav li{
+    cursor: pointer;
+}
+.topDiv{
+    height:50px;
+    position:relative;
+}
+.circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:7px #fff solid;
+    background:#67bae1;
+    box-shadow: -8px 8px 10px 3px #bbb;
+    float: left;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+}
+.circle span{
+    font-size:38px;
+    color: #fff;
+    font-family: serif;
+    font-weight:900;
+}
+.aHead{
+    height:40px;
+    background: #fff;
+    color: #000;
+    box-shadow: -8px 8px 10px 3px #bbb;
+    border-top-right-radius:50px;
+    border-bottom-right-radius: 50px;
+    float: left;
+    position: absolute;
+    z-index:1;
+    padding-left:20px;
+    left:55px;
+    top:12px;
+    box-sizing: border-box;
+}
+.aHead span{
+    font-size:18px;
+    color:#000;
+    line-height: 2.3;
+    box-sizing: border-box;
+}
+.bottom{
+    float: left;
+    box-sizing: border-box;
+}
+.bottom p{
+    line-height: 1.5;
+    font-size:14px;    
+}
+.img{
+    width:200px;
+    height:120px;
+    float:right; 
+}
+.img img{
+    width:200px;
+    height:120px;
+}
+@media(min-width: 1190px){
+    .aNav,.main{
+        margin-top:80px;
+    }
+    .aHead{
+        width:670px;
+    }
+    .bottom{
+        width:780px;
+    }
+}
+@media (max-width: 1189px) and (min-width: 769px){
+    .aNav,.main{
+        margin-top:50px;
+    }
+    .aHead{
+        width:78%;
+    }
+    .bottom{
+        width:85%;
+    }
+}
+@media (min-width:769px){
+    .aNav{
+        margin-left:6%;
+    }
+    .main{
+        min-height:420px;
+        float:right;
+        border-top-left-radius:90px;
+        background-image: url('../../images/aboutBack.png');
+        background-repeat: repeat-x; 
+        width:80.52%; 
+    }
+    .topDiv{
+        margin-left:50px;
+        margin-top:40px;
+    }
+    .bottom{ 
+        padding-top: 60px;
+        padding-left: 100px;
+        padding-right: 20px;
+    }
+    .img{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+}
+@media (max-width:768px){
+    .aNav{
+        margin-top:20px;
+        margin-left:70px;
+        margin-bottom: 20px;
+    }
+    .main{
+        clear:both;
+        margin-top:25px;
+        width:100%;
+    }
+    .topDiv{
+        margin-left:30px;
+    }
+    .aHead{
+        width:76%;
+    }
+    .bottom{ 
+        width:90%;
+        margin-left:30px;
+        padding-top: 10%;
+        padding-left: 10%;
+        padding-right:10%;
+    }
+    .img{
+        margin-left: 5px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}

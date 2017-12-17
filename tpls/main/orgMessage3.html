@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>校社联欢迎你</title>
+<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+<link rel="stylesheet" type="text/css" href="./img/css/main/orgMessage.css">
+<link rel="stylesheet" type="text/css" href="./img/css/main/orgMessage3.css">
+<script src="./img/js/jquery.js"></script>
+<script src="./img/js/main/orgMessage.js"></script>
+<script src="./img/js/main/main.js"></script>
+<script>
+$(function(){
+var time=0;
+    $(".comment_a").click(function(){
+        $.ajax({
+            type:"GET",
+            url:"",
+            dataType:"jsonp",
+            data:i,
+            success:function(data){
+                if(data.length>0){
+                    for(i=0;i<data.length;i++){
+                        commentDemo="<div class='comment'> <img class='head_portrait' src='"+data[i].portrait+"'> <div class='comment_right'> <span class='my_name' name='my_name'>"+data[i].name+"</span> <span class='time' name='time'>"+data[i].date_of_entry+"</span> <div class='conDiv'><span class='con'>"+data[i].content+"</span> </div> </div> </div>";
+                        $(".com").append(commentDemo);
+                    }   
+                    time++;             
+                }else{
+                    if(time==0&& data.length==0){
+                        $(".default").css("display","block");
+                        $(".comment_a").css("display","none");
+                    }
+                    else{
+                        $(".comment_a").css("display","none");
+                        $(".bottom").css("display","block");
+                    }
+                }
+            }
+            error:function(jqXHR){
+                alert("发生错误："+jqXHR.status);
+            }
+        })
+    })
+    $(window).scroll(function(){
+        var viewHeight =$(this).height();//可见高度  
+        var contentHeight =$("body").get(0).scrollHeight;//内容高度  
+        var scrollHeight =$(this).scrollTop();//滚动高度 
+        var bottom= contentHeight-viewHeight;
+        if( bottom == scrollHeight) { 
+            $(".comment_a").click();
+        }  
+    });
+    $(".comment_a").click();
+    //评论后更新？？
+})
+</script>
+</head>
+<body>
+    {<include file="main/oMBegin.html">} 
+
+    	<form method="post" id="form1" action="index.html?{<'controller=login&method=addComment'|encrypt_url:'SCU'>}">
+            <input type="hidden" name="sNO" value="{<$sNO>}">
+            <textarea class="comment_textarea"  placeholder="请输入评论..." name="content"></textarea>
+            <input type="submit" class="submit" value="提交">                    
+        </form>
+        <div class="com">
+
+        </div>
+        <a href="#" class="comment_a">查看更多</a>   
+        <span class="default">该社团暂未收到评论，快来抢沙发吧~</span>
+        <div class="bottom">
+            <hr><span>我也是有底线的</span><hr>
+        </div>
+    {<include file="main/oMEnd.html">} 

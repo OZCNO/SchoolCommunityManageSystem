@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+	<script src="./img/js/admin/{<$jsurl|default:'scuManagement_5.js'>}"></script>
+</head>
+<body style="overflow-x: hidden">
+	
+<div class="right" id="activeShow">
+	<div class="nowPosition"><span>你现在的位置：社联相关>活动发布</span></div>
+	<div class="rightTable" style="width: 96%">
+		<table>
+			<tr class="bgk">
+				<td style="width: 15%">活动名称</td>
+				<td style="width: 10%">负责人</td>
+				<td style="width: 10%">发布时间</td>
+				<td style="width: 15%">展示位置</td>
+				<td style="width: 8%">操作</td>
+			</tr>
+			{<foreach $arr|default:null as $i=>$value >}
+				{<if $i%2==1>}
+					{<assign "class" "oneLine">}
+				{<else>}
+					{<assign "class" "twoLine">}
+				{</if>}
+			<tr class={<$class>}>
+				<td style="width: 15%">{<$value->aName>}</td>
+				<td style="width: 10%">{<$value->hName>}</td>
+				<td style="width: 10%">{<$value->date_of_entry>}</td>
+        <td style="width: 15%">{<$value->location>}
+          {<if $value->location=="公告" >}
+              {<$value->category>}
+          {</if>}
+        </td>
+				<td style="width: 8%">
+          <form method="POST" action="admin.php?controller=sManage&method=activityUpdate">
+            <input style="display:none" type="text" name="aNO" value="{<$value->aNO>}"/>
+            <!--<span class="operationLook">修改</span><span class="operationLine">|</span>-->
+             <input type="submit" class="operationLook" value="修改"/><span class="operationLine">|</span>
+            <span class="operationDel" onclick="dell({<$value->aNO>})">删除</span>
+          </form>
+				
+				</td>							
+			</tr>
+			{</foreach>}
+		</table>
+		{<if $arr|default:null==null>}<span style="position:relative;display:inline-block;left:40%">暂无发布的活动</span>{</if>}
+		<div class="cutPages">
+				<a href="admin.php?controller=sManage&method=activityGetpage&page=1" class="firstAndLast"><span>首页</span></a>
+				{<if $p-1<1 >}
+				{<assign "pp" 1>}
+				{<else>}
+					{<assign "pp" $p-1>}
+				{</if>}
+				<a href="admin.php?controller=sManage&method=activityGetpage&page={<$pp>}" class="fbgk"><span><<</span></a>
+				{<for $i=1 to $page|default:1>}
+					<a href="admin.php?controller=sManage&method=activityGetpage&page={<$i>}" class="ebgk"><span>{<$i>}</span></a>
+				{</for>}
+				{<if $p+1>$page>}
+					{<assign "pp" $page>}
+				{<else>}
+					{<assign "pp" $p+1>}
+				{</if>}
+				<a href="admin.php?controller=sManage&method=activityGetpage&page={<$pp>}" class="fbgk"><span>>></span></a>
+				<a href="admin.php?controller=sManage&method=activityGetpage&page={<$page>}" class="firstAndLast"><span>尾页</span></a>
+		</div>
+		<div class="right_sbt"><input type="submit" id="right_sbts" onclick="add()" value="发布新活动"></div>
+	</div>
+	
+	<div class="actShow_transparent_bgk_del" style="display: none">
+			<div class="activityAlertDelDiv">
+					<p class="activityAlertP">确定删除该活动</p>
+						<div class="activityAlertSbm">
+							<input type="submit" name="" onclick="del()" value="确定">
+							<input type="submit" id="OperationCancel" name="" value="取消">
+						</div>
+			</div>
+	</div>
+</div>
+</body>
+</html>

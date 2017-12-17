@@ -1,0 +1,220 @@
+*{
+	margin:0;
+	padding: 0;
+}
+.account-table{
+	z-index: 0;
+	position: relative;
+}
+/* 表格设置 */
+.account-table table{
+	width: 94%;
+	margin-left: 2%;
+	margin-top: 0.6rem;
+}
+table .account-title{
+	background: #cfdcfd;
+}
+/* 表格颜色变化 */
+table .account-fff{
+	background: #fff;
+}
+table .account-fafa{
+	background: #fafafa;
+}
+/* 操作按钮设置*/
+.account-table tr td span{
+	cursor: pointer;
+	font-size: 0.8rem;
+} 
+.account-table .account-op:hover,.account-table .account-op2:hover{
+	color: #ccc;
+}
+.account-table .account-op:active,.account-table .account-op2:active{
+	color: #333;
+}
+/* 添加按钮设置 */
+#account-add{
+	margin-left:42.5%; 
+	width:10rem;
+	display: block;
+	height: 2.4rem;
+	margin-top: 2rem;
+	font-size: 1.2rem;
+	background: #cfdcfd;
+	border: 1px solid #ccc;
+	outline: none;
+}
+#account-add:hover{
+	opacity: 0.8;
+}
+#account-add:active{
+	opacity: 1;
+}
+/* 添加新成员的弹出层 */
+#add-bg{
+	background: #333;
+	opacity: 0.3; 
+	z-index: 1000; 
+	/* width: 100%;
+	height: 55rem; */
+	display: block;
+	position: absolute;
+	top: 0rem;
+
+}
+/* 添加新成员的内容*/
+#add-content{
+	width: 23rem;
+	height: 25rem;
+	background: #fff;
+	position: fixed;
+	z-index: 2000;
+}
+.add-title{
+	height: 2rem;
+	background: #cfdcfd;
+}
+.add-title span{
+	font-size: 1rem;
+	line-height: 2rem;
+	margin-left: 1rem;
+}
+.add-title img{
+	float: right;
+	margin-right: 1rem;
+	margin-top: 0.6rem;
+}
+.add-form{
+	/* margin-left: 8%;  */
+	margin-top: 2rem;
+	/* text-align: center; */
+}
+.add-form span,label,select{
+	font-size: 0.8rem;
+}
+.add-form span{
+	margin-left: 4%;	
+}
+.add-form .add-input label{
+	width: 4rem;
+	display: inline-block;
+
+}
+.add-form .add-input .label2{
+	text-align: center;
+}
+select{
+	width: 28%;
+	margin-left: 2%;
+
+}
+input,select,option{
+	outline: none;
+}
+.add-input input{
+	width: 6rem;
+	/* 	margin-left: 2%; */
+}
+.add-input{
+	margin-top: 1rem;
+}
+.add-input .label1{
+	margin-left: 0.8rem;
+}
+/*
+.add-input .label2{
+	margin-left: 11.4%;
+}
+.add-input .label3{
+	margin-left: 12.4%;
+} */
+.add-mess{
+	margin-left: 33%;
+	display: inline-block;
+	margin-top: 2rem;
+	font-size: 0.6rem;
+}
+.add-submit{
+	width: 4rem;
+	height: 2rem;
+	background: #cfdcfd;
+	border: 1px solid #ccc;
+	margin-left: 43%;
+	margin-top: 2rem;
+	font-size: 1rem;
+}
+
+/* 确认是否删除 */
+#del{
+	width: 15rem;
+	height: 5rem;
+	background: #fff;
+	position: fixed;
+	top: 15rem;
+	left: 42.5%;
+	/* text-align: center; */
+}
+
+#del .del-span{
+	text-align: center;
+}
+#del span{
+	font-size: 1rem;
+	display: inline-block;
+	margin-top: 0.6rem;
+}
+#del .del-input{
+	margin-left: 13%;
+}
+#del input{
+	width: 2rem;
+	height: 1.2rem;
+	background: #cfdcfd;
+	border: 1px solid #ccc;
+	outline: none;
+	font-size: 0.6rem;
+	margin-top: 1rem;
+	display: inline-block;
+	margin-left: 2.5rem;
+
+}
+.btn1{
+	margin-left: 20%；
+
+}
+
+
+
+
+/* 信息反馈内容 */
+#add-content2{
+	width: 28rem;
+	height: 25rem;
+	background: #fff;
+	position: fixed;
+	z-index: 2000;
+}
+#add-content2 .add-form input,textarea{
+	margin-left: 1rem;
+	outline: none;
+	width: 80%;	
+}
+textarea{
+	height: 13rem;
+}
+.weizhi{
+	position: relative;
+	top: -12rem;
+	
+}
+#add-content2 .add-form #center{
+	margin-left: 42.5%;
+}
+#add-content2 .add-form .input-sub{
+	width: 6rem;
+	height: 2rem;
+	background: #cfdcfd;
+	border: 1px solid #ccc;
+	margin-top:1rem; 
+}

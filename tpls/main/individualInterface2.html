@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>个人信息</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/individualInterface2.css">
+	<script src="./img/js/jquery.js"></script>	
+    <script src="./img/js/main/main.js"></script>
+    <script src="./img/js/main/individual2.js"></script>
+</head>
+
+<body>
+    {<include file="main/header.html">}    
+    
+    <div class="back_mark"></div>
+    <article>
+    	<div class="out">
+            <div id="individualCenter">个人中心</div>
+            <div id="left">
+                <div id="photo">
+                    <img src="{<$userinfo['portrait']|default:''>}?rand={<$rand|default:''>}" onerror="this.src='./img/images/default_portrait/default.jpg'" />
+                    <span id="editPhoto">修改头像</span>
+
+                    <div class="uploadPhoto">
+                        <div class="subTitle">
+                            <span>编辑头像</span>
+                            <span class="close">x</span>
+                        </div>
+                        <img src="./img/images/default_portrait/default.jpg">
+                        <form id="form0" method="post" enctype="multipart/form-data" action="main.php?controller=uploadPort&method=upload">
+                            <input name="username" type="hidden" value="{<$userinfo['username']|default:null>}">
+                            <div class="uploader">
+                                <input type="text" class="filename" readonly="readonly"/>
+                                <input type="button" name="file" class="button" value="Browse..."/>
+                                <input name="portrait" type="file" size="30"/>
+                            </div>
+                            <input type="submit" class="submit" value="上传图片">
+                        </form>
+                        
+                        <p class="fileErrorTip"></p>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div id="right">
+                <div id="rightTop">
+                    <span id="perInfor">个人信息</span>
+                    <span id="perOrg">我的社团</span>
+                </div>
+                <!-- 个人信息 -->
+                <div id="rightMid">
+                    <span>基本资料</span>
+                    <span id="edit">编辑</span>
+                </div>
+                <form id="information" method="post" enctype="multipart/form-data" action="">
+                    <label>姓名：<input type="text" value="{<$userinfo['name']|default:''>}" disabled="disabled"></label><br>
+                    <label>学号：<input type="text" name="username" value="{<$userinfo['username']|default:''>}" disabled="disabled"></label><br>
+                    <label>性别：<input type="text" value="{<$userinfo['sex']|default:''>}" disabled="disabled"></label><br>
+                    <label>系别：<input type="text" value="{<$userinfo['dept']|default:''>}" disabled="disabled"></label><br>
+                    <label>专业：<input type="text" value="{<$userinfo['major']|default:''>}" disabled="disabled"></label><br>
+                    <label>邮箱：<input type="email" name="email" value="{<$userinfo['email']|default:''>}" disabled="disabled" class="editable edit" placeholder="请输入邮箱地址"></label><br><div class="tip"></div>
+                    <label>手机号：<input type="text" name="tel" value="{<$userinfo['tel']|default:''>}"    disabled="disabled" class="editable edit" placeholder="请输入手机号码"></label><br><div class="tip"></div>
+                    <label>微信号：<input type="text" name="wechat" value="{<$userinfo['wechat']|default:''>}" disabled="disabled" class="editable edit" placeholder="请输入微信号"></label><br><div class="tip"></div>
+                </form>
+                <!-- 我的社团 -->
+                <div id="intention">
+                    <span class="subTitle">关注的社团：</span>
+                    <div class="outBox">
+                    {<foreach $concern|default:null as $concern>}
+                        <div class="box">
+                            <a href="main.php?controller=index&method=show1&sNO={<$concern.sNO>}">
+                                <img src=""><span class="itsName">{<$concern.sName>}</span>
+                            </a>
+                        </div>
+                    {<foreachelse>}
+                        <span class="default">一个社团都没关注哦</span>
+                    {</foreach>}
+                    </div>
+                </div>
+                <br style="clear: both">
+                <div id="attend">
+                    <span class="subTitle">加入的社团：</span>
+                    <div class="outBox">
+                    {<foreach $society|default:null as $arr>}
+                        <div class="box"><a href="main.php?controller=index&method=show1&sNO={<$arr.sNO>}"><img src=""><span class="itsName">{<$arr.sName>}</span></a></div>
+                    {<foreachelse>}                        
+                        <span class="default">一个社团都没加哦</span>
+                    {</foreach>}  
+                    </div>                  
+                </div>
+            </div>
+            <br style="clear: both">
+    	</div>
+    </article>
+    {<include file='main/login.html'>}
+
+</body>
+</html>

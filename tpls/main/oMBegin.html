@@ -1,0 +1,23 @@
+    {<include file="main/header.html">}    
+	<div class="wrapped">
+    	<div class="content">
+    		<div class="name">
+            	<div class="name_left">
+                    <span class="org">出雲音乐协会</span><br>
+                    <a id="concern">
+                        <input name="username" type="hidden" value="{<$userinfo['username']|default:null>}">
+                        {<if $isConcern === '1'>}
+                            <img src="./img/images/attened.png" id="attention_img">
+                            <span id="attention_span">取消关注</span>
+
+                        {<else>}
+                            <img src="./img/images/atten.png" id="attention_img">
+                            <span id="attention_span">关注</span>
+                        {</if>}
+                    </a>
+                </div>
+                <input type="button" value="{<$isJoin|default:'加入社团'>}" class="joinSociety">
+            </div>
+            <div style="clear:both;"></div>
+        	<div class="main">
+            

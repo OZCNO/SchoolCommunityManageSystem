@@ -1,0 +1,19 @@
+<?php
+	$config=array(
+	'db_config'=>array('type'=>'mysql',
+					 'host'=>'127.0.0.1',
+					 'port'=>'3306',
+					 'user'=>'root',
+					 'password'=>'',
+					 'dbname'=>'SCU3',
+					 'charset'=>'utf8'
+	),
+	'smarty_config'=>array('left_delimiter'=>'{<',
+						   'right_delimiter'=>'>}',
+						   'template_dir'=>'../tpls',
+						   'compile_dir'=>'../data/templates_c',
+						   'cache_dir'=>'../data/cache'
+	)
+	);
+	$GLOBALS['host']="localhost";
+?>

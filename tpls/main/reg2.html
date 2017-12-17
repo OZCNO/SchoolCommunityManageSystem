@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>注册界面</title>
+	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/reg1.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/reg2.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/main/main.js"></script>
+	<script src="./img/js/main/reg2.js"></script>
+</head>
+
+<body>
+    {<include file="main/header.html">}    
+    
+	<article>
+		<img src="./img/images/2.png" alt="1" class="img-position">
+		<div id="form-content">
+			<form action="{<$reg3>}" method="post" onsubmit="return confirm2()">
+				<ul>
+					<li>
+						<label>&nbsp&nbsp姓&nbsp&nbsp名&nbsp<input type="text" name="realname" class="inputDiv" placeholder="请输入你的真实姓名" /></label><br><span class="state1"></span>
+					</li>
+					<li class="dept">
+						&nbsp&nbsp学&nbsp&nbsp院&nbsp<select name="dept">
+							<option value="金融与投资学院" selected>金融与投资学院</option>
+							<option value="会计学院">会计学院</option>
+							<option value="保险学院">保险学院</option>
+							<option value="经济贸易学院">经济贸易学院</option>
+							<option value="信用管理学院">信用管理学院</option>
+							<option value="工商管理学院">工商管理学院</option>
+							<option value="互联网金融与信息工程学院">互联网金融与信息工程学院</option>
+							<option value="外国语言与文化学院">外国语言与文化学院</option>
+							<option value="法学院">法学院</option>
+							<option value="财经与新媒体学院">财经与新媒体学院</option>
+							<option value="金融数学与统计学院">金融数学与统计学院</option>
+							<option value="公共管理学院">公共管理学院</option>
+							<option value="创业教育学院">创业教育学院</option>
+							<option value="马克思主义学院">马克思主义学院</option>
+							<option value="体育教学部">体育教学部</option>
+							<option value="继续教育学院">继续教育学院</option>
+							<option value="国际教育学院">国际教育学院</option>
+						</select><br><br>
+					</li>
+					<li>
+						<label>&nbsp&nbsp专&nbsp&nbsp业&nbsp<input type="text" name="major" class="inputDiv" placeholder="请输入专业编号" /></label><br><span class="state1"></span>
+					</li>
+				</ul>
+				<ul>
+					<li class="sex">
+						&nbsp&nbsp性&nbsp&nbsp别&nbsp<select name="sex" >
+							<option value="男" selected>男</option>
+							<option value="女">女</option>
+						</select><br><br>
+					</li>
+					<li>
+						<label>&nbsp&nbsp手&nbsp&nbsp机&nbsp<input type="text" name="tel" class="inputDiv" placeholder="请输入你的手机号" /></label><br><span class="state1"></span>
+					</li>
+					<li>
+						<label>&nbsp&nbsp微信号&nbsp<input type="text" name="chat" class="inputDiv" placeholder="请输入你的微信号" /></label><br><span class="state1"></span>
+					</li>
+				</ul>
+				<input type="submit" class="submitBtn btn"  value="下一步"/>
+			</form>
+		</div>
+	</article>
+	{<include file="main/login.html">}
+</body>
+</html>

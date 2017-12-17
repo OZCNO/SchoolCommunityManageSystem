@@ -1,0 +1,64 @@
+.right-editor{
+    		background: #eeeced;
+    		width: 100%;
+    		height: 60rem;
+    		font-family: SimHei
+    		/* position: relative; */
+    	}
+    	.position{
+    		padding-left: 1rem;
+    		font-size: 0.8rem;
+    		padding-top: 0.5rem;
+    		display: inline-block;
+    	}
+        .sub{
+            margin-left: 36%;
+            margin-top: 8rem;
+        }
+    	.sub-button{
+    		width: 10rem;
+    		height: 3rem;
+    		font-size: 1.2rem;
+    		line-height: 12px;
+    		border-radius: 5px;
+    		border: 1px solid #cfdcfd;
+    		outline: none;
+    		
+    		background: #cfdcfd;
+    	}
+    	.sub-button:visited,.sub-button:active{
+    		box-shadow: 0 1px 1px #ccc;
+    	}
+    	.main-title,
+        .host,
+        .display-pos{
+    		margin-left: 2rem;
+    		margin-top: 1rem;
+    	}
+    	.main-title-input{
+    		width: 30rem;
+    		height: 1rem;
+    		outline: none;
+    		font-size: 0.8rem;
+    	}
+    	.main-title label,
+        .host label,
+        .display-pos label{
+    		font-size: 0.8rem;
+    	}
+        .host label{
+            margin-left: 0.8rem;
+        }
+        select{
+            width: 10rem;
+            height: 1.5rem;
+            outline: none;   
+        }
+        option{
+            border: 0;
+        }
+    	#editor{
+    		width:72rem;
+    		height:35rem;
+    		margin-left:2rem;
+    		margin-top: 0.5rem;

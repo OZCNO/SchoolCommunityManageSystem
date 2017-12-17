@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+	<script src="./img/js/admin/scuManagement_3.js"></script>
+</head>
+<body style="overflow-x: hidden">
+	<!--模块=============社联相关-现有社团-==================-->
+
+
+<div class="right" id="now">
+	<div class="nowPosition"><span>你现在的位置：社团相关>现有社团</span></div>
+	<div class="rightle">
+		<form method="POST" action="admin.php?controller=sManage&method=now">
+					<div class="userSearch">
+						<div class="titleBgk">
+							<div class="userSearchS"><span class="userSearchSpan">用户查询</span></div>
+						</div>
+						<div class="formIptBgk">
+							<div class="select">
+								<span>选择类型：</span>
+								<select name="department">
+									<option value="0">不限</option>
+									<option value="1">学术科技类</option>
+									<option value="2">体育健身类</option>
+									<option value="3">文娱文化类</option>
+									<option value="4">综合实践类</option>
+								</select>
+							</div>
+							<div class="selectNextDiv">
+								<span>社团名称</span><input class="ipt" type="text" name="realname"></div>
+								<input type="submit" class="submitSbt" value="查询">
+						</div>
+					</div>
+		</form>
+				<div class="rightTable">
+					<table>
+						<tr class="bgk">
+							<td style="width: 3%;">全选</td>
+							<td style="width: 10%">社团名</td>
+							<td style="width: 10%">社团类型</td>
+							<td style="width: 10%">负责人</td>
+							<td style="width: 10%">成立时间</td>
+							<td style="width: 12%">指导老师</td>
+							<td style="width: 10%">会员人数</td>
+							<td style="width: 10%">操作</td>
+						</tr>
+						{<foreach $arr|default:null as $k=>$v>}
+							{<if $k%2==0>}
+								<tr class="twoLine">
+							{<else>}
+								<tr class="oneLine">
+							{</if>}
+									<td style="width: 3%;"><input type="checkbox" class="one" value="{<{<$v->sNO>}>}"></td>
+									<td style="width: 10%">{<$v->sName>}</td>
+									<td style="width: 10%">{<$v->sType>}</td>
+									<td style="width: 10%">{<$v->hName>}</td>
+									<td style="width: 10%">{<$v->date_of_found>}</td>
+									<td style="width: 12%">{<$v->tName>}</td>
+									<td style="width: 10%">{<$v->vNum>}</td>
+									<td style="width: 10%">
+									<span class="operationLook" onclick="getData({<$v->sNO>})">查看</span><span class="operationLine">|</span>
+									<span class="operationDel" onclick="dell()">删除</span>
+									</td>
+								</tr>
+						{</foreach>}
+					</table>
+					{<if $arr|default:null==null>}
+					<div style="text-align:center">当前没有社团</div>
+					{<else>}
+						<input type="checkbox" name="all" id="all" onclick="changeState()"/>全选
+						<div class="cutPages">
+							<a href="admin.php?controller=sManage&method=nowgetPage&page=1" class="firstAndLast"><span>首页</span></a>
+							{<if $p-1<1 >}
+							{<assign "pp" 1>}
+							{<else>}
+								{<assign "pp" $p-1>}
+							{</if>}
+							<a href="admin.php?controller=sManage&method=nowgetPage&page={<$pp>}" class="fbgk"><span><<</span></a>
+							{<for $i=1 to $page|default:1>}
+								<a href="admin.php?controller=sManage&method=nowgetPage&page={<$i>}" {<if $i==$p>}class="ebgk"{<else>}class="fbgk"{</if>}><span>{<$i>}</span></a>
+							{</for>}
+							{<if $p+1>$page>}
+								{<assign "pp" $page>}
+							{<else>}
+								{<assign "pp" $p+1>}
+							{</if>}
+							<a href="admin.php?controller=sManage&method=nowgetPage&page={<$pp>}" class="fbgk"><span>>></span></a>
+							<a href="admin.php?controller=sManage&method=nowgetPage&page={<$page>}" class="firstAndLast"><span>尾页</span></a>
+						</div>
+					{</if>}
+				</div>
+	</div>
+
+	<div class="transparent_bgk_del" style="display: none">
+			<div class="activityAlertDelDiv">
+					<p class="activityAlertP">确定删除所选社团的全部信息</p>
+						<div class="activityAlertSbm">
+							<input type="button" onclick="del()" value="确定">
+							<input type="button" id="OperationCancel" value="取消">
+						</div>
+			</div>
+  </div>
+</div>
+  {<include file="admin/scuManagement_3_2.html">}
+</body>
+</html>

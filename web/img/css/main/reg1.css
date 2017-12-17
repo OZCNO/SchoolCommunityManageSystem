@@ -1,0 +1,94 @@
+body{
+	min-width: 340px;
+}
+.submitBtn:hover{
+	background-color:#AEC5FF;
+}
+form ul{
+	width:300px;
+}
+form ul li{
+	list-style:none;
+	font-size:16px;
+}
+li input{
+	width:200px;	
+	border:0;
+	font-size: 12px;
+	text-indent: 1em;
+	outline:none;
+}
+/*覆盖input的默认背景*/
+.inputDiv{
+	width:200px;
+	height:23px;
+	border:1px solid #ccc;
+	padding:1px;
+	background: #fff;
+}
+.state1{
+	display: inline-block;
+	font-size: 0.8rem;
+	margin-left: 85px;
+	line-height: 1.9;
+}
+input.submitBtn{
+	width: 5rem;
+	height: 2rem;
+	font-size: 1rem;
+	color: #000;
+	background-color:#cfdcfd;
+	border:0;
+	outline:none;
+}
+/*reg3*/
+.canvasContainer{
+	margin:40px auto;
+	width:200px;
+	height:200px;
+}
+@media (min-width: 769px){
+	article{
+		margin:35px auto;
+		border:solid #fff 1px;
+		background: #fff;
+		box-shadow:-10px 10px 40px 2px #999;
+		width:45rem;
+		height:30rem;
+	}
+	.img-position{
+		display: block;
+		width:550px;
+		margin-top:80px;
+		margin-left:90px;
+	}
+	#form-content{
+		width:600px;
+		margin:3rem auto;
+	}
+	form{
+		width: 600px;
+	}
+	input.submitBtn{
+		margin:1rem 16.6rem;
+	}	
+}
+@media (max-width: 768px){
+	.img-position{
+		display: block;
+		max-width: 550px;
+		min-width: 330px;
+		width:90%;
+		margin:8% auto 0;
+	}
+	#form-content{
+		width:20rem;
+		margin:30px auto;
+	}
+	form{
+		width:300px;
+	}
+	input.submitBtn{
+		margin:0.5rem 38%;
+	}
+}

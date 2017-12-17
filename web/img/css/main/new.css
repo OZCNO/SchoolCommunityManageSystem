@@ -1,0 +1,66 @@
+*{
+	margin: 0 auto;
+}
+p,h2{
+	text-align: center;
+}
+.newImg{
+	height: 9.0625rem;
+	width: 75rem;
+	padding: 0;
+	position: relative;
+	top: -0.05rem;
+}
+#newNav{
+	width: 65rem;
+	height: 2rem;
+	padding-top:0.6rem;
+}
+#newNav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: -0.5rem;
+}
+#newNav ul .leftDes{
+	margin-left: 2.5rem;
+}
+#newNav ul li a{
+	text-decoration: none;
+	font-size: 1.1rem;
+	color: #000;
+
+}
+#newNav ul li span{
+	font-size: 1.1rem;
+
+}
+hr{
+	margin-top: 0.6rem;
+}#newNav ul li a:hover{
+	color: #cc00ff;
+
+}
+.title {
+	margin-top: 0.8rem;
+}
+.newDate{
+	margin-top: 0.5rem;
+}
+.newArticle{
+	width: 60rem;
+	margin-top: 1rem;
+	text-align: left;
+	font-weight: bold;
+}
+.newAtricleImg{
+	display: block;
+	text-align: center;
+	width: 45rem;
+	height: 25rem;
+	margin-top: 0.8rem;
+}
+.null{
+	width: 60rem;
+	height: 5rem;
+	background: #fff;
+}

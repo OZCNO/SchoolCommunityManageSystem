@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>校社联后台管理系统</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/scuManagement.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/scuManagement.js"></script>
+	<script src="./img/js/admin/{<$jsurl|default:"scuManagement_1.js">}"></script>
+	<style>
+		
+		body{
+			overflow-y: hidden;
+			overflow-y: hidden;
+		} 
+		html{
+			overflow-y: hidden;
+		}
+		.bg{
+			background: #ededed;
+			width: 81.2%;
+			min-width: 40rem;
+			height: 44rem;
+			position: absolute;
+			margin-left: 18rem;
+			float: right; 
+		}
+	</style>
+</head>
+<body>
+		<header><img src="./img/images/backstage.png"></header>
+		<article>
+			<div class="left">
+										<div class="leftUser">
+											<span class="leftUserSpan">用户名:{<$usr>}</span>
+											<input  class="leftUserIpt" type="button" name="" value="退出" onclick="exit()">
+										</div>
+										<div class="leftNav">
+											<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>社团相关</span></div><hr>
+											<div><span class="leftNavNOImg" id="noww">现有社团</span></div><hr>
+											<div><span class="leftNavNOImg" id="club-man">社团管理员</span></div><hr>
+											
+											<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>社联相关</span></div><hr>
+											<div><span class="leftNavNOImg" id="member">成员管理</span></div><hr>
+											<div><span class="leftNavNOImg" id="activity">活动发布</span></div><hr>
+											<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>审核信息</span></div><hr>
+											<div><span class="leftNavNOImg" id="yearReg">年度注册审核</span></div><hr>
+											<div><span class="leftNavNOImg" id="activeReg">活动申请审核</span></div><hr>
+											<div class="leftNavImg"><img src="./img/images/circleArrows.png"><span>权限管理</span></div><hr>
+											<div><span class="leftNavNOImg" id="msgFeedback">信息反馈</span></div><hr>
+											<div><span class="leftNavNOImg" id="scuAccount">账号管理</span></div><hr>
+										</div>
+									</div>
+			<div class="bg">
+        <iframe id="ifr" src="http://{<$host>}/SCU/web/admin.php?controller=sManage&method={<$url>}" scrolling="yes" width="100%" height="700px" frameborder="0"></iframe>
+			</div>
+		</article>
+		<script>
+			
+				window.onlond = function(){
+					document.getElementById('ifr').style.overflowX = 'hidden';
+				}
+			
+			
+		</script>
+</body>
+</html>

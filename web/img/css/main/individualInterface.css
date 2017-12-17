@@ -1,0 +1,70 @@
+p,span,a,li,input{
+    font-family: SimHei;
+}
+.massage{
+	width: 75rem;
+	margin: 0 auto;
+	z-index: 1;
+}
+.massage1 .dot{
+	font-size: 3rem;
+	width: 4rem;
+	height: 4rem;
+	color: #89c5e1;
+	position: relative;
+	top: -0.3rem;
+	margin-left: 7.5rem;
+}
+.massage1 .date{
+	font-size: 1.8rem;
+	color: #89c5e1;
+}
+.massage1 {
+	padding-top:1.5rem;
+}
+.line{
+	width: 48rem;
+	height: 0.5rem;
+	float: right;
+	margin-right: 10rem;
+	margin-top: -1.3rem;
+}
+hr{
+	color:  #89c5e1;
+}
+.notice1{
+	width: 51rem;
+	height: 5rem;
+	margin-right: 10rem;
+	margin-top: 1.5rem;
+}
+.notice2{
+	width: 51rem;
+	height: 5rem;
+	margin-right: 10rem;
+	margin-top: 1rem;
+}
+h2{
+	font-size: 1.5rem;
+	color: #5b5b5b;
+}
+.tit{
+	position: relative;
+	top: 0.5rem;
+	font-size: 1.2rem;
+	color: #5b5b5b;
+}
+.details{
+	position: relative;
+	top: 0.5rem;
+	font-size: 1rem;
+	color: #5b5b5b;
+}
+.details{
+	float: right;
+	margin-right: 0.8rem;
+}
+.massage a{
+	text-decoration: none;
+	color: #5b5b5b;
+}

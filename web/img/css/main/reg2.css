@@ -1,0 +1,18 @@
+select{
+	text-indent:0.7em;
+}
+.dept select{
+	height:27px;
+	width:204px;
+}
+.sex select{
+	height:27px;
+	width:50px;
+}
+@media (min-width: 769px){
+	form ul{
+		width:280px;
+		margin-left: 20px;
+		float: left;
+	}
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>活动内容</title>
+	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/new.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
+    <script src="./img/js/jquery.js"></script>
+    <script src="./img/js/main/main.js"></script>
+</head>
+<body>
+    {<include file="main/header.html">} 
+    <article>
+      <!-- 
+      <div class="newImg"><img src="./img/images/newImg.jpg" alt="placeholder+image"></div>  -->
+    	<div id="newNav">
+    		<ul class="newNavUl">
+    			<li class="leftDes"><a href="">当前位置</a><span class="kuohao">></span></li>
+    			<li><a href="main.php">首页</a><span class="kuohao">></li>
+    			<li><a href="">新闻</a><span class="kuohao">></li>
+    		</ul><hr>
+    	</div>
+    	<div class="newsContent">
+        <h2 class="title">{<$content->aName>}</h2>
+        {<$content->aContent>}
+    		<div class="null"></div>
+
+    	</div>
+    </article>
+	{<include file="main/login.html">}
+</body>
+</html>

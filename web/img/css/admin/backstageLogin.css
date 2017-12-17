@@ -1,0 +1,195 @@
+		*{
+			margin :0 auto;
+		}
+		body{
+			background:url(../../images/SCULoginPic.png) no-repeat 5rem 0rem;
+			background-size:70rem 40rem;
+		}
+		header{
+			width: 100%;
+			height:4rem;
+			background:#99ccff url(../../images/backstage.png) 3rem 0.1rem no-repeat;
+		}
+		article{
+			min-height: 100%
+			padding-bottom:2rem;
+			padding-top: 4rem;
+			position: relative;
+		}
+		.rightLogin{
+			width:20rem;
+			height:23rem;
+			float:left;
+			margin-left:30rem;
+			margin-top:0.5rem;
+			border:1px solid #ddd;
+			border-radius: 0.7rem;
+		}
+		.left{
+			float:left;
+			width:12rem;
+			height:7.5rem;
+			margin-left:12rem;
+			margin-top:7rem;
+		}
+		
+		.left .span1{
+			font-family:simHei;
+			font-size: 2.4rem;
+			display:block;
+			color:#89B0F5;
+			line-height: 1.5;
+		}
+		.left .span2{
+			font-family:simHei;
+			font-size:1.4rem;
+			display:block;
+			float:right;
+			line-height: 1.2;
+		}
+		.left a{
+			font-family:simHei;
+			font-size:1rem;
+			display:block;
+			float:right;
+			color:#89B0F5;
+			line-height:2;
+			text-decoration: none;
+		}
+		.SCUTitle{
+			height: 3rem;
+			background:#fafbfd;
+			border: 0;
+			border-top-right-radius: 0.5rem;
+			border-top-left-radius: 0.5rem;
+			border-bottom:1px solid #ddd;
+			text-align: center;
+		}
+		.SCUL1,.SCUL2{
+			width: 49.6%;
+			
+			height: 98%;
+		}
+		.SCUL1{
+			border-top-left-radius: 0.7rem;
+			float: left;
+			background: #fff;
+			border-right: 2px solid #eee;
+		}
+		.SCUL2{
+			border-top-right-radius: 0.7rem;
+
+			float: right;
+		}
+		.sTitle{
+			font-size: 1.35rem;
+			line-height:2.3;
+			float: left;
+			margin:0 2.2rem;
+			cursor: pointer;
+		}
+		.slTitle{
+			font-size: 1.35rem;
+			line-height:2.3;
+			float: right;
+			margin:0 2.2rem;
+			cursor: pointer;
+		}
+		.formIpt{
+			margin:2rem auto;
+			text-align: center;
+		}
+		.user,.psd{
+			width: 11rem;
+			height: 2rem;
+			border: 0;
+			outline: none;
+			font-size: 1.0rem;
+			color:#ddd;
+		}
+		.user{
+			margin-left: 2.5rem;
+			position: absolute;
+			left: 0;
+			z-index: 0;
+		}
+		.reset{
+			position: absolute;
+			right: 0.5rem;
+			top:0.7rem;
+			z-index: 1;
+			outline:none;
+			width:1rem;
+			height:1rem;
+		}
+		.imgUser{
+			position: relative;
+		}
+		.imgUser,.imgPwd{
+			background-size:1.5rem 1.5rem;
+			background-position: 0.5rem 0.5rem;
+			background-repeat: no-repeat;
+			width: 16rem;
+			height: 2rem;
+			border:1px solid #ddd;
+			border-radius: 0.5rem;
+			padding-top: 0.2rem;
+			padding-bottom: 0.2rem;
+		}
+		.imgUser{
+			background-image: url(../../images/iptUserName.png);
+		}
+		.imgPwd{
+			background-image: url(../../images/lock.png);			
+			margin-top:1rem;
+		}
+		.tips{
+			display: block;
+			margin-bottom:0.3rem;
+			height:1rem;
+			text-align:left;
+			text-indent:2.3rem;
+			font-size:0.6em;
+		}
+		.rem_psd{
+		margin-top:10px;
+		margin-right:10.5rem;
+		height:20px;
+		padding-bottom:8px;
+		font-size:0.8rem;
+		}
+		.rem_psd input{
+		width:15px;
+		height:15px;
+		display:inline-block;
+		vertical-align:bottom;
+		margin-right: 0.3rem;
+		}
+
+
+		.loginBtn{
+			text-align: center;
+			margin-top:1rem;
+		}
+		.login_btn{
+			width: 16.4rem;
+			height: 2.8rem;
+			font-size: 1.35rem;
+			background: #6FAFF7;
+			border: 1px solid #c5d9e2;
+			border-radius: 0.5rem;
+			outline: none;
+			color: #fff;
+			font-family:simHei;
+			margin-top: -5rem;
+		}
+		.tail{
+			width:100%;
+			height:2rem;
+			background-color: #9cf;
+			position:fixed;
+			bottom:0rem;
+			left: 0rem;
+
+		}
+		.formIpt div input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 100px white inset};
